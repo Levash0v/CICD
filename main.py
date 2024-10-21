@@ -13,8 +13,8 @@ from aiogram.dispatcher.filters import Command, Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
 load_dotenv()
-api_token = os.getenv('API_TOKEN')
-bot = Bot(token=api_token)
+# api_token = os.getenv('API_TOKEN')
+bot = Bot(token='API_TOKEN')
 
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
