@@ -1,0 +1,4 @@
+aiogram==2.25.1
+python-dotenv==1.0.1
+Requests==2.32.3
+python-binance==1.0.19
