@@ -9,7 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env:
+      API_TOKEN: ${{ secrets.API_TOKEN }}
+      AV_API_KEY: ${{ secrets.AV_API_KEY }}
+      BINANCE_API_KEY: ${{ secrets.BINANCE_API_KEY }}
+      BINANCE_API_SECRET: ${{ secrets.BINANCE_API_SECRET }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
