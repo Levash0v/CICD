@@ -10,7 +10,7 @@ from aiounittest import AsyncTestCase
 from main import get_currency_rate, get_crypto_rate, get_stock_rate, conn, cursor, process_asset_type, process_asset_ticker, process_asset_amount, add_to_portfolio, process_asset_type, process_asset_ticker, process_asset_amount, Portfolio, asset_type_inline_keyboard
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-API_TOKEN = os.getenv('API_TOKEN2')
+API_TOKEN = os.getenv('API_TOKEN')
 
 class TestFinanceBot(unittest.TestCase):
     @patch('main.requests.get')
