@@ -89,7 +89,7 @@ class TestPortfolioHandlers(AsyncTestCase):
     def setUp(self):
         # Создаем моки для бота и диспетчера
         self.bot = Bot(token=API_TOKEN)
-        self.storage = MemoryStorage()  # Инициализируем память для хранения состояний
+        self.storage = MemoryStorage() 
         self.dispatcher = Dispatcher(self.bot, storage=self.storage)
         self.state = AsyncMock(FSMContext)
         self.state.set_state = AsyncMock()
@@ -100,8 +100,8 @@ class TestPortfolioHandlers(AsyncTestCase):
         message = MagicMock(Message)
         message.text = "Крипто"
         message.reply = AsyncMock()
-        message.from_user.id = 123456789  # Задайте user ID
-        message.chat.id = 67890       # Задайте chat ID
+        message.from_user.id = 123456789 
+        message.chat.id = 67890       
 
         # Мокаем методы FSMContext
         state = AsyncMock()

@@ -65,7 +65,7 @@ def main_menu_keyboard():
 # Inline-клавиатура для выбора типа актива кнопки в одну строку метод row() вместо add()
 def asset_type_inline_keyboard():
     inline_kb = InlineKeyboardMarkup()
-    # Добавляем кнопки в одну строку 
+
     inline_kb.row(
         InlineKeyboardButton("💸Крипто", callback_data='crypto'),
         InlineKeyboardButton("💵Валюта", callback_data='currency'),
@@ -82,9 +82,9 @@ class PriceState(StatesGroup):
 class StockState(StatesGroup):
     waiting_for_asset = State()
 class Portfolio(StatesGroup):
-    waiting_for_asset_type = State()  # Состояние ожидания типа актива
-    waiting_for_asset_ticker = State()  # Состояние ожидания тикера
-    waiting_for_amount = State()  # Состояние ожидания количества
+    waiting_for_asset_type = State()  
+    waiting_for_asset_ticker = State() 
+    waiting_for_amount = State() 
 
 # Обработка нажатий на Inline-кнопки для выбора актива
 @dp.callback_query_handler(lambda c: c.data in ['crypto', 'currency', 'stock'], state=Portfolio.waiting_for_asset_type)
