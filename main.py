@@ -173,7 +173,7 @@ async def crypto_command(message: types.Message, state: FSMContext):
 # Команда для получения курса криптовалюты
 @dp.message_handler(Text(equals="💸Крипто", ignore_case=True))
 async def start_crypto_process(message: types.Message, state: FSMContext):
-    await message.reply("Пожалуйста, введите тикер актива, например: btcusdt")
+    await message.reply("Пожалуйста, введите тикер актива, например: btc, eth")
     await PriceState.waiting_for_asset.set()  # Устанавливаем состояние ожидания ввода тикера
 
 # Обрабатываем ввод тикера от пользователя
