@@ -1,0 +1,10 @@
+/.pytest_cache
+/.venv
+/app_data
+/temp
+.coverage
+/.help
+.env
+/__pycache__
+.gitignore
+.DS_Store
