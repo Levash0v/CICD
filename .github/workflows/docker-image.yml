@@ -42,7 +42,6 @@ jobs:
             sudo docker system prune -a -f
             sudo docker pull maksimvl/fin_mipt
             sudo nohup docker run -d -it \
-            -e API_TOKEN=${{ secrets.API_TOKEN }} \
             -v /home/levashov/app_data:/app/app_data \
             --name main_container \
             maksimvl/fin_mipt
