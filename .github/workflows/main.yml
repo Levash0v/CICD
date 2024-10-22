@@ -18,6 +18,20 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Download Outline Client
+      run: |
+        curl -L -o Outline-Client.AppImage https://s3.amazonaws.com/outline-releases/client/linux/stable/Outline-Client.AppImage
+        chmod +x Outline-Client.AppImage
+
+    - name: Start VPN using Outline
+      env:
+        OUTLINE_ACCESS_KEY: ${{ secrets.OUTLINE_ACCESS_KEY }}
+      run: |
+        ./Outline-Client.AppImage -a $OUTLINE_ACCESS_KEY &
+
+    - name: Wait for VPN connection
+      run: sleep 10  # Дождитесь подключения к VPN
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
